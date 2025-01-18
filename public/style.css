@@ -1,0 +1,235 @@
+body{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    margin: 0;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+}
+
+.logo{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.page{
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar{
+    width: 19rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.258);
+}
+
+.main-content{
+    width: 50rem;
+    overflow: auto;
+    border-right: 1px solid rgba(255, 255, 255, 0.258);
+}
+
+.add-info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-contents{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem;
+    gap: 2rem;
+}
+
+.nav-option i{
+    margin: 0.3rem;
+    opacity: 0.7;
+}
+
+
+.nav-option i:hover{
+    opacity: 1;
+}
+
+.subscription{
+    background-color: rgb(23, 22, 22);
+    height: 10rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 8px goldenrod;
+}
+
+
+.trending{
+    background-color: rgb(23, 22, 22);
+    height: 20rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 8px goldenrod;
+}
+
+
+button{
+    height: 2rem;
+    border-radius: 1rem;
+    border: none;
+    margin: 1.5rem;
+    width: 8rem;
+}
+
+p{
+    padding-left: 2rem;
+}
+
+#hash{
+    margin-left: 4rem;
+    padding: 0.8rem;
+}
+
+#hash a{
+    opacity: 0.7;
+}
+
+#hash a:hover{
+    opacity: 2;
+}
+
+.posttw{
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 20rem;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.header{
+    background-color: rgb(23, 22, 22);
+    width: 50rem;
+    height: 7rem;
+    position: fixed;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.258);
+}
+
+#post-button{
+    width: 4rem;
+    font-weight: 600;
+}
+
+.header i{
+    margin-left: 2rem;
+    opacity: 0.7;
+    font-size: medium;
+}
+
+.header i:hover{
+    opacity: 2;
+    font-size: large;
+}
+
+.header p{
+    display: inline;
+}
+
+.nav-option a{
+    opacity: 0.7;
+    /* font-size: medium; */
+}
+
+.nav-option a:hover{
+    opacity: 2;
+    /* font-size: large; */
+}
+
+.post-content{
+    margin-top: 7.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.individual-post{
+    background-color: rgb(23, 22, 22);
+    height: auto;
+    border-radius: 0.6rem;
+    padding-left: 2rem;
+    margin: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.258);
+    /* display: inline; */
+}
+
+#detail-tag{
+    color: black;
+    font-weight: bolder;
+}
+
+#detail-button{
+    border-radius: 0.4rem;
+    width: 6.4rem;
+    opacity: 0.8;
+}
+
+.individual-post h3{
+    display: inline;
+}
+
+#Edit-tag{
+    color: black;
+    font-weight: bolder;
+}
+
+#edit-button{
+    border-radius: 0.4rem;
+    width: 6.4rem;
+    margin-left: -1rem;
+    opacity: 0.8;
+}
+
+#detail-button:hover{
+    opacity: 1.5;
+}
+
+#edit-button:hover{
+    opacity: 1.5;
+}
+
+#matter{
+    padding-right: 2rem;
+    text-align: justify;
+}
+
+#delete-btn{
+    font-weight: 600;
+    border-radius: 0.4rem;
+    width: 6.3rem;
+    background-color: rgba(255, 255, 255, 0.712);
+    cursor: pointer;
+}
+
+.logIn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    font-weight: 600;
+}
+
+.logIn a{
+    text-decoration: underline;
+}

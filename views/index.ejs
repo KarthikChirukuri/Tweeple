@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweeple</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/X-logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <div class="sidebar">
+            <div class="logo">
+                <h2 id="heading"><a href="#"><b>Tweeple</b></a></h2>
+            </div>
+            <div class="profile-contents">
+                <div class="nav-option">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">Explore</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-bell"></i>
+                    <a href="#">Notifications</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="#">Messages</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-user-group"></i>
+                    <a href="#">Communications</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-user-large"></i>
+                    <a href="#">Profile</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-coins" ></i>
+                    <a href="#">Premium</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-circle-info" ></i>
+                    <a href="#">About</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <form action="/post/new" method="get">
+                    <input placeholder="What is happening?!" class="posttw" name="title">
+                    <button id="post-button" type="submit">post</button> 
+                </form>
+                <i class="fa-solid fa-image"></i>
+                <i class="fa-solid fa-square-poll-horizontal"></i>
+                <i class="fa-solid fa-face-smile"></i>
+                <i class="fa-solid fa-location-dot"></i> 
+                <p>Hello Tweeple</p>
+            </div>
+            <div class="post-content">
+                    <% for(post of posts){ %>
+                        <div class="individual-post">
+                            <h3>@<%= post.title %></h3>
+                            <button id="detail-button"><a href="/post/<%= post.id %>" id="detail-tag">See in detail</a></button>
+                            <button id="edit-button"><a href="/post/<%= post.id %>/edit" id="Edit-tag">Edit your post</a></button>
+                            <p id="matter"><%= post.content %></p>
+                            <form method="post" action="/post/<%= post.id %>?_method=DELETE">
+                                <button id="delete-btn">Delete post</button>
+                            </form>
+                        </div>
+                    <% } %>
+            </div>
+        </div>
+        <div class="add-info">
+            <div class="subscription">
+                <button style="font-weight: 600;"><a href="/subscription" style="color: black;">Subscription</a></button>
+                <p>
+                    Subscribe to our page<br>
+                    To get more benifits...
+                </p>
+            </div>
+            <div class="trending">
+                <p><b>Trending</b> <i class="fa-solid fa-chart-line"></i></p>
+                <div id="hash"><a href="#"><i class="fa-solid fa-hashtag"></i> India </a></div>
+                <div id="hash"><a href="#"><i class="fa-solid fa-hashtag"></i> Telugu </a></div>
+                <div id="hash"><a href="#"><i class="fa-solid fa-hashtag"></i> Cricket </a></div>
+                <div id="hash"><a href="#"><i class="fa-solid fa-hashtag"></i> DevaraBoxOffice </a></div>
+                <div id="hash"><a href="#"><i class="fa-solid fa-hashtag"></i> Pushpa2TheRule </a></div>
+            </div>
+            <div class="logIn">
+                <a href="/logIn">log In</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

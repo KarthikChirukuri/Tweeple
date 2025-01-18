@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="/new.css">
+</head>
+<body>
+    <h2>Create your new post</h2>
+    <form method="post" action="/posting">
+        <% if (title) { %>
+            <input type="hidden" name="title" value="<%= title %>">
+            <h3>Title: <%= title %></h3>
+        <% } %>
+        <!-- <input placeholder="Enter title" name="title"> --><br>
+        <textarea placeholder="write content here!" name="content" class="TextArea" rows="15" cols="60"></textarea> <br>
+        <button class="btn">submit</button>
+    </form>
+</body>
+</html>

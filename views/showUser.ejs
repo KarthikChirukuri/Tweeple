@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See in detail</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body style="margin: 2rem;">
+    <h2>Seeing your post in detail</h2>
+    <h3><%= post.id %></h3>
+    <div style="margin-left: 2rem; margin-top: 2rem;">
+        <h3><%= post.title %></h3>
+        <h3 style="text-align: justify; padding-right: 5rem;"><%= post.content %></h3>
+    </div>
+        <button style="width: 5.8rem; font-weight: 600; border-radius: 0.4rem;">
+            <a href="http://localhost:3000/" style="color: black">
+                Go Back
+            </a>
+        </button>
+</body>
+</html>

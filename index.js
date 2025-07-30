@@ -14,7 +14,7 @@ main()
 .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb+srv://karthukchirukuri2005:R5UiYUSVF8mhaHs@tweeple.6qhk898.mongodb.net/?retryWrites=true&w=majority&appName=Tweeple');
+  await mongoose.connect('mongodb+srv://karthukchirukuri2005:R5UiYUSVhF8mhaHs@tweeple.6qhk898.mongodb.net/?retryWrites=true&w=majority&appName=Tweeple');
 }
 
 app.use(methodOverride('_method'));

@@ -25,6 +25,15 @@ a{
 .sidebar{
     width: 19rem;
     border-right: 1px solid rgba(255, 255, 255, 0.258);
+    position: relative;
+    height: 100vh;
+}
+
+.adminProfile {
+  position: absolute;
+  bottom: 10px; /* adjust spacing */
+  
+  width: 100%;
 }
 
 .main-content{

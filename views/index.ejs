@@ -50,6 +50,10 @@
                     <i class="fa-solid fa-circle-info" ></i>
                     <a href="#">About</a>
                 </div>
+                <div class="adminProfile nav-option" style="margin-bottom: 10px;">
+                    <i class="fa-solid fa-user-large"></i>
+                    <a href="#"><%= currentUser ? currentUser.username : "Guest" %></a>
+                </div>
             </div>
         </div>
         <div class="main-content">
@@ -95,6 +99,7 @@
                 <div id="hash"><a href="#"><i class="fa-solid fa-hashtag"></i> Pushpa2TheRule </a></div>
             </div>
             <div class="logIn">
+                <a href="/signUp">SignUp</a> &nbsp;&nbsp;&nbsp;
                 <a href="/logIn">log In</a>
             </div>
         </div>

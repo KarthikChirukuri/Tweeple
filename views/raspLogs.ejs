@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node Security Shield - Attack Logs</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      color: #333;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #2c3e50;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .tag {
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      color: white;
+    }
+    .xss { background-color: #e67e22; }
+    .sql { background-color: #c0392b; }
+    .cmd { background-color: #8e44ad; }
+    .path { background-color: #16a085; }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Node Security Shield - Attack Logs</h1>
+
+  <% if (logs.length === 0) { %>
+    <p style="text-align:center;"> No attacks detected yet. Your app is safe!</p>
+  <% } else { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Rule</th>
+          <th>Type</th>
+          <th>Message</th>
+          <th>URL</th>
+          <th>IP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% logs.forEach(log => { %>
+          <tr>
+            <td><%= new Date(log.createdAt).toLocaleString() %></td>
+            <td>
+              <span class="tag 
+                <%= log.rule === 'XSS' ? 'xss' : 
+                    log.rule === 'SQL Injection' ? 'sql' : 
+                    log.rule === 'Command Injection' ? 'cmd' : 'path' %>">
+                <%= log.rule %>
+              </span>
+            </td>
+            <td><%= log.type %></td>
+            <td><%= log.message %></td>
+            <td><%= log.url %></td>
+            <td><%= log.ip %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</body>
+</html>

@@ -1,19 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tweeple logIn</title>
-  </head>
-  <body style="background-color: black; color: white">
-    <h2>You can LogIn from here</h2>
-    <form method="post" action="/login">
-      <input type="text" placeholder="Enter Username" name="username" />
-      <br /><br />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tweeple Login</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      background: linear-gradient(180deg, #000, #0d0d0d);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-      <input type="password" placeholder="Enter password" name="password" />
-      <br /><br />
-      <button>submit</button>
+    .login-container {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #1da1f2;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      margin: 8px 0;
+      background: #111;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .input-group {
+      position: relative;
+      width: 90%;
+      margin: auto;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #888;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 95%;
+      padding: 12px;
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #1991da;
+      transform: scale(1.02);
+    }
+
+    .signup-link {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .signup-link a {
+      color: #1da1f2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Small screen adjustments */
+    @media (max-width: 600px) {
+      .login-container {
+        width: 85%;
+        padding: 30px 20px;
+      }
+      input, button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <i class="fa-solid fa-user-shield" style="font-size: 40px; color: #1da1f2; margin-bottom: 12px;"></i>
+    <h2>Welcome Back!</h2>
+    <p>Log in to your Tweeple account to connect and share your thoughts.</p>
+
+    <form method="post" action="/login">
+      <input type="text" placeholder="Enter Username" name="username" required />
+
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Enter Password" name="password" required />
+        <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+      </div>
+
+      <button type="submit">Log In</button>
     </form>
-  </body>
+
+    <div class="signup-link">
+      Don’t have an account? <a href="/signUp">Sign up</a>
+    </div>
+  </div>
+
+  <script>
+    // Toggle password visibility
+    const toggle = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+    toggle.addEventListener('click', () => {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      toggle.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
 </html>

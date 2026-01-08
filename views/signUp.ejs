@@ -1,28 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tweeple SignUp</title>
-  </head>
-  <body style="background-color: black; color: white">
-    <h2>Create a New Account</h2>
-    <form method="post" action="/signup">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tweeple SignUp</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      background: linear-gradient(180deg, #000, #0d0d0d);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .signup-container {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #1da1f2;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      margin: 8px 0;
+      background: #111;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .input-group {
+      position: relative;
+      width: 90%;
+      margin: auto;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #888;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 95%;
+      padding: 12px;
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #1991da;
+      transform: scale(1.02);
+    }
+
+    .login-link {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .login-link a {
+      color: #1da1f2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .signup-container {
+        width: 85%;
+        padding: 30px 20px;
+      }
+      input, button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="signup-container">
+    <i class="fa-solid fa-user-plus" style="font-size: 40px; color: #1da1f2; margin-bottom: 12px;"></i>
+    <h2>Create Account</h2>
+    <p>Join Tweeple and start sharing your thoughts with the world.</p>
+
+    <form method="post" action="/signUp">
       <input type="text" placeholder="Enter Username" name="username" required />
-      <br /><br />
 
-      <input type="password" placeholder="Enter Password" name="password" required />
-      <br /><br />
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Enter Password" name="password" required />
+        <i class="fa-solid fa-eye toggle-password" id="togglePassword1"></i>
+      </div>
 
-      <input type="password" placeholder="Confirm Password" name="confirmPassword" required />
-      <br /><br />
+      <div class="input-group">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" required />
+        <i class="fa-solid fa-eye toggle-password" id="togglePassword2"></i>
+      </div>
 
       <button type="submit">Sign Up</button>
     </form>
-    <br />
-    <p>
-      Already have an account? 
-      <a href="/login" style="color: lightblue;">Log In here</a>
-    </p>
-  </body>
+
+    <div class="login-link">
+      Already have an account? <a href="/login">Log In</a>
+    </div>
+  </div>
+
+  <script>
+    // Toggle password visibility
+    const toggle1 = document.getElementById('togglePassword1');
+    const pass1 = document.getElementById('password');
+    toggle1.addEventListener('click', () => {
+      const type = pass1.getAttribute('type') === 'password' ? 'text' : 'password';
+      pass1.setAttribute('type', type);
+      toggle1.classList.toggle('fa-eye-slash');
+    });
+
+    const toggle2 = document.getElementById('togglePassword2');
+    const pass2 = document.getElementById('confirmPassword');
+    toggle2.addEventListener('click', () => {
+      const type = pass2.getAttribute('type') === 'password' ? 'text' : 'password';
+      pass2.setAttribute('type', type);
+      toggle2.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
 </html>

@@ -1,41 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tweeple subscription</title>
-    <link rel="stylesheet" href="/subscription.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tweeple Subscription</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #15202b;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h3 {
+      color: #1da1f2;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #e1e8ed;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: #1da1f2;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #1a91da;
+      text-decoration: underline;
+    }
+
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 600px;
+      background-color: #192734;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: #1da1f2;
+      color: white;
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #38444d;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    tbody tr:hover {
+      background-color: #22303c;
+      transition: 0.3s;
+    }
+
+    .subscribe-btn {
+      margin-top: 30px;
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .subscribe-btn:hover {
+      background-color: #1a91da;
+    }
+
+    @media (max-width: 600px) {
+      h3 {
+        font-size: 22px;
+      }
+      table {
+        font-size: 14px;
+      }
+      .subscribe-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h3>Thanks for choosing to subscribe our Tweeple</h3>
-    <p>Gain premeire experience from now</p>
-    <br>
-    <p>Lets grow together, <a href="#">Click here</a></p>
-    <table>
-        <thead>
-            <tr>
-                <th>Plan months</th>
-                <th>Cost</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>One month</td>
-                <td>299/-</td>
-            </tr>
-            <tr>
-                <td>Two months</td>
-                <td>399/-</td>
-            </tr>
-            <tr>
-                <td>Six months</td>
-                <td>599/-</td>
-            </tr>
-            <tr>
-                <td>One year</td>
-                <td>1099/-</td>
-            </tr>
-        </tbody>
-    </table>
+  <h3>Thank you for choosing Tweeple Premium ✨</h3>
+  <p>Enjoy an ad-free, faster, and more personalized Tweeple experience!</p>
+  <p>Let’s grow together — <a href="#">click here</a> to join our community 💙</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Plan Duration</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1 Month</td>
+        <td>₹299</td>
+      </tr>
+      <tr>
+        <td>2 Months</td>
+        <td>₹399</td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td>₹599</td>
+      </tr>
+      <tr>
+        <td>1 Year</td>
+        <td>₹1099</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="subscribe-btn">Subscribe Now</button>
 </body>
 </html>

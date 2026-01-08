@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -104,5 +104,330 @@
             </div>
         </div>
     </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tweeple</title>
+
+  <!-- Google Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #15202b;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .page {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 20px;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 0.25;
+      background-color: #192734;
+      border-radius: 20px;
+      padding: 20px;
+      height: fit-content;
+      position: sticky;
+      top: 10px;
+    }
+
+    .logo h2 a {
+      text-decoration: none;
+      color: #1da1f2;
+      font-size: 28px;
+    }
+
+    .nav-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0;
+      font-size: 18px;
+    }
+
+    .nav-option a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .nav-option a:hover {
+      color: #1da1f2;
+    }
+
+    /* Main feed */
+    .main-content {
+      flex: 0.5;
+      background-color: #192734;
+      border-radius: 20px;
+      padding: 15px 20px;
+    }
+
+    .header {
+      border-bottom: 1px solid #38444d;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .header form {
+      display: flex;
+      align-items: center;
+      background-color: #22303c;
+      border-radius: 25px;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .header input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 16px;
+    }
+
+    .header button {
+      background-color: #1da1f2;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .header button:hover {
+      background-color: #1a91da;
+    }
+
+    /* Individual Posts */
+    .individual-post {
+      background-color: #22303c;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .individual-post:hover {
+      background-color: #1c2733;
+    }
+
+    .individual-post h3 {
+      color: #1da1f2;
+      margin-bottom: 8px;
+    }
+
+    .individual-post p {
+      font-size: 15px;
+      color: #e1e8ed;
+      margin-bottom: 12px;
+      white-space: pre-wrap;
+    }
+
+    .post-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .post-actions a,
+    .post-actions button {
+      text-decoration: none;
+      border: none;
+      background-color: #1da1f2;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .post-actions a:hover,
+    .post-actions button:hover {
+      background-color: #1a91da;
+    }
+
+    #delete-btn {
+      background-color: #e0245e;
+    }
+
+    #delete-btn:hover {
+      background-color: #c81e52;
+    }
+
+    /* Right Panel */
+    .add-info {
+      flex: 0.25;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: fit-content;
+      position: sticky;
+      top: 10px;
+    }
+
+    .subscription,
+    .trending {
+      background-color: #192734;
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .subscription button {
+      background-color: #1da1f2;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: white;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .subscription p {
+      color: #8899a6;
+      font-size: 14px;
+    }
+
+    .trending p {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .trending a {
+      text-decoration: none;
+      color: #1da1f2;
+      display: block;
+      margin: 5px 0;
+    }
+
+    .logIn {
+      text-align: center;
+      background-color: #192734;
+      padding: 15px;
+      border-radius: 15px;
+    }
+
+    .logIn a {
+      text-decoration: none;
+      color: #1da1f2;
+      font-weight: 600;
+    }
+
+    @media (max-width: 992px) {
+      .page {
+        flex-direction: column;
+      }
+      .sidebar,
+      .add-info {
+        flex: 1;
+        order: 2;
+      }
+      .main-content {
+        order: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header form {
+        flex-direction: column;
+      }
+      .header button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <h2><a href="/">Tweeple</a></h2>
+      </div>
+      <div class="profile-contents">
+        <div class="nav-option"><i class="fa-solid fa-house"></i><a href="/">Home</a></div>
+        <div class="nav-option"><i class="fa-solid fa-bell"></i><a href="#">Notifications</a></div>
+        <div class="nav-option"><i class="fa-solid fa-envelope"></i><a href="#">Messages</a></div>
+        <div class="nav-option"><i class="fa-solid fa-user"></i><a href="#">Profile</a></div>
+        <div class="nav-option"><i class="fa-solid fa-shield"></i><a href="/admin/rasp-logs">Security Logs</a></div>
+        <div class="nav-option"><i class="fa-solid fa-user-circle"></i><a href="#"><%= currentUser ? currentUser.username : "Guest" %></a></div>
+      </div>
+    </div>
+
+    <!-- Main Feed -->
+    <div class="main-content">
+      <div class="header">
+        <form action="/post/new" method="get">
+          <input placeholder="What’s happening?!" name="title" />
+          <button type="submit">Post</button>
+        </form>
+      </div>
+
+      <div class="post-content">
+        <% for (post of posts) { %>
+          <div class="individual-post">
+            <h3>@<%= post.title %></h3>
+            <p><%= post.content %></p>
+            <div class="post-actions">
+              <a href="/post/<%= post.id %>">View</a>
+              <a href="/post/<%= post.id %>/edit">Edit</a>
+              <form method="post" action="/post/<%= post.id %>?_method=DELETE" style="display:inline;">
+                <button id="delete-btn" type="submit">Delete</button>
+              </form>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="add-info">
+      <div class="subscription">
+        <button><a href="/subscription" style="color: white; text-decoration: none;">Subscribe</a></button>
+        <p>Subscribe to Tweeple+ for premium features</p>
+      </div>
+
+      <div class="trending">
+        <p>Trending Now <i class="fa-solid fa-chart-line"></i></p>
+        <a href="#"><i class="fa-solid fa-hashtag"></i> India</a>
+        <a href="#"><i class="fa-solid fa-hashtag"></i> Telugu</a>
+        <a href="#"><i class="fa-solid fa-hashtag"></i> Cricket</a>
+        <a href="#"><i class="fa-solid fa-hashtag"></i> Pushpa2</a>
+      </div>
+
+      <div class="logIn">
+        <a href="/signUp">Sign Up</a> | <a href="/login">Log In</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

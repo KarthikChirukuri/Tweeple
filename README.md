@@ -147,8 +147,8 @@ node-security-shield/
 
 ## Installation & Setup
 
-git clone https://github.com/your-username/node-security-shield.git
-cd node-security-shield
+git clone https://github.com/KarthikChirukuri/Tweeple.git
+cd Tweeple
 npm install
 npm start
 
